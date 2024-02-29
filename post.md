@@ -127,7 +127,7 @@ void loop() {
 }
 
 
-[Picture of the Code](/resources/C-Code-DistanceDetector.pngC-Code-DistanceDetector.png)
+![Picture of the Code](resources/C-Code-DistanceDetector.pngC-Code-DistanceDetector.png)
 
 
 
