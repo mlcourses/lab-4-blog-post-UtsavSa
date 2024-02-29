@@ -68,21 +68,31 @@ void setup() {
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
   
+
+  
   // Initialize serial communication for debugging
   Serial.begin(9600);
   Serial.println("Distance Detector Initialized");
 }
 
+
 void loop() {
   // Measure distance using ultrasonic sensor
-  digitalWrite(TRIG_PIN, LOW); // set trigger pin to low to ensure its stable state before sending ultrasonic pulse
-  delayMicroseconds(2);  // short delay to make sure trigger pin is in low state
-  digitalWrite(TRIG_PIN, HIGH); // Now, we set the trig pin to high to send a short untrasonic pulse. 
-  delayMicroseconds(10); // wait to make sure the pulse is sent
-  digitalWrite(TRIG_PIN, LOW); // bring the trigger pin to low state.
+  digitalWrite(TRIG_PIN, LOW); 
+  delayMicroseconds(2);  
+  digitalWrite(TRIG_PIN, HIGH); 
+  delayMicroseconds(10); 
+  digitalWrite(TRIG_PIN, LOW); 
   
-  long duration = pulseIn(ECHO_PIN, HIGH); // measure the duration of the pulse sent back by the sensor (built in function)
-  int distance_cm = duration * 0.034 / 2; // Convert duration to distance in cm (speed of sound is 0.034 cm/microsecond)
+
+
+
+  // measure the duration of the pulse sent back by the sensor (built in function)
+  long duration = pulseIn(ECHO_PIN, HIGH); 
+
+
+  // Convert duration to distance in cm (speed of sound is 0.034 cm/microsecond)
+  int distance_cm = duration * 0.034 / 2; 
   
   // Check if distance measurement is valid (within range)
   if (distance_cm > 0 && distance_cm <= 100) {
