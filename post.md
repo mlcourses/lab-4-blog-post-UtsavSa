@@ -69,7 +69,7 @@ void setup() {
   pinMode(ECHO_PIN, INPUT);
   
 
-  
+
   // Initialize serial communication for debugging
   Serial.begin(9600);
   Serial.println("Distance Detector Initialized");
@@ -96,21 +96,24 @@ void loop() {
   
   // Check if distance measurement is valid (within range)
   if (distance_cm > 0 && distance_cm <= 100) {
-    // Map distance to frequency for buzzer tone
+
 
     // map = (value, fromLow, fromHigh, toLow, toHigh). range from low to high = range to low, to high.
     int frequency = map(distance_cm, 1, 100, 5000, 500); // Adjust frequency range as needed
     
-    // Emit tone on buzzer
+
     tone(BUZZER_PIN, frequency);
+    
   
     // Print distance and frequency for debugging
     Serial.print("Distance: ");
     Serial.print(distance_cm);
     Serial.print(" cm, Frequency: ");
     Serial.println(frequency);
+
+
   } else {
-    // Print error message if distance measurement is invalid
+
     Serial.println("Error: Distance measurement out of range");
   }
   
