@@ -82,7 +82,7 @@ void setup() {
 
 void loop() {
 
-    
+
   digitalWrite(TRIG_PIN, LOW); 
   delayMicroseconds(2);  
   digitalWrite(TRIG_PIN, HIGH); 
@@ -125,6 +125,9 @@ void loop() {
   // Add delay between readings
   delay(500);
 }
+
+
+[Picture of the Code](/resources/C-Code-DistanceDetector.pngC-Code-DistanceDetector.png)
 
 
 
