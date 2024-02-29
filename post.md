@@ -63,21 +63,26 @@ This week we'll explore...
 #define ECHO_PIN 11  
 
 void setup() {
-  // Initialize buzzer and ultrasonic sensor pins
+
+
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
   
 
 
+
   // Initialize serial communication for debugging
   Serial.begin(9600);
   Serial.println("Distance Detector Initialized");
+
+
 }
 
 
 void loop() {
-  // Measure distance using ultrasonic sensor
+
+    
   digitalWrite(TRIG_PIN, LOW); 
   delayMicroseconds(2);  
   digitalWrite(TRIG_PIN, HIGH); 
@@ -103,7 +108,7 @@ void loop() {
     
 
     tone(BUZZER_PIN, frequency);
-    
+
   
     // Print distance and frequency for debugging
     Serial.print("Distance: ");
