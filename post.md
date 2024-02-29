@@ -52,15 +52,14 @@ This week we'll explore...
 
 
 
-**C Code For Distance Detector:**
+**C Code For Distance Detector:** This is the following code we used in Arduino IDE:
+
 
 
 // Define buzzer and ultrasonic sensor pins
-// digital pin to buzzer
+
 #define BUZZER_PIN 9 
-// digital pin to the trigger pin of ultrasonic
 #define TRIG_PIN 12 
-// digital pin connected to the echo pin of untrasonic sensor
 #define ECHO_PIN 11  
 
 void setup() {
